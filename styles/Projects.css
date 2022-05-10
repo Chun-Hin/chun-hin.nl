@@ -133,31 +133,7 @@
 .btnUX:after {
     content: 'test!';
 }
-.CSP1{
-    border: 2px solid #FF9900;
-    border-radius: 10px;
-    width: 550px;
-    height: 250px;
-}
 
-.headerCSP{
-    color: #FF9900;
-    font-size: 50px;
-    margin-left: 210px;
-}
-
-.contentCSP{
-    width: 500px;
-    color: white;
-    text-align: center;
-    margin-left: 20px;
-}
-
-.btnCSP{
-    margin-left: 190px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
 .btnUX, button::after {
     width: 150px;
     height: 30px;
