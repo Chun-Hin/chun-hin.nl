@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 0%;
+    padding: 0%;
+    background-color: #161617;
+}
+
+#overlay{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+#cDialog{
+    transition: top 1s;
+    top: 40%;
+    position: absolute;
+    top: -300px;
+    width: 500px;
+    background-color: black;
+    z-index: 2;
+    color: white;
+    margin-left: 480px;
+}
+#diaHead{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #161617;
+    color: #FF9900;
+    font-size: 30px;
+}
+.fa-close:hover{
+    color: #1E5977;
+    cursor: pointer;
+}
+#diaCont{
+    flex-direction: column;
+    font-size: 20px;
+    justify-content: center;
+    padding: 60px;
+    background-color:#161617 ;
+    color: #FF9900;
+}
+#diaFooter{
+    padding: 10px;
+    background-color: #161617;
+    color: #1E5977;
+}
+
+.topnav{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.nav{
+    color: #1E5977;
+}
+
+.nav a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.butn{
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.butn:hover{
+    color: #FF9900;
+    text-decoration: underline;
+}
+
+.content{
+    display: flex;
+    vertical-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header{
+    color: #FF9900;
+    font-size: 50px;
+}
+
+.headerInfo{
+    width: 500px;
+    color: white;
+    text-align: center;
+}
+
+.imgContent{
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images {
+    width: 20%;
+    margin: 20px;
+}
+

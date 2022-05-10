@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+        function contact() {
+            console.log("open contact")
+            document.getElementById("overlay").style.display = "block"
+            document.getElementById("cDialog").style.top = "30%"
+        }
+
+        function closecontact() {
+            console.log("Close Login");
+            document.getElementById("cDialog").style.top= "-400px ";
+            document.getElementById("overlay").style.display = "none  ";
+        }
+    </script>
+</head>
+<body>
+
+<div id="overlay"></div>
+
+<div id="cDialog">
+    <div id="diaHead"><p style="margin-left: 180px">Contact</p><i onclick="closecontact()" class="fa fa-close"></i></div>
+    <div id="diaCont"><p style="text-align: center">chunhin.ip05@gmail.com</p><br><p style="text-align: center">+31628269761</p></div>
+    <div id="diaFooter"></div>
+</div>
+
+
+
+<div class="topnav">
+    <nav class="nav">
+        <a class="butn" href="index.html">Home</a>
+        <a class="butn" href="about.html">About Me</a>
+        <a class="butn" href="skills.html" style="color: #FF9900">Skills</a>
+        <a class="butn" href="Projects.html">Projects</a>
+        <a class="butn" onclick="contact('contact')">Contact</a>
+    </nav>
+</div>
+
+<div>
+    <div class="content">
+        <p class="header">Skills</p>
+        <br>
+        <p class="headerInfo">What I have learned in my first year is working with HTML, CSS, JS, PHP and C#. At the moment I want to deepen myself in JS Frameworks (React, Angular, Vue) because these are of course one of the most used languages ​​at the moment. I don't know much about JS framework yet but I am open to learn new things. Hopefully in the coming years I will learn a lot more about coding.</p>
+    </div>
+    <div class="imgContent">
+        <img src="images/talen.webp">
+    </div>
+</div>
+
+</body>
+</html>

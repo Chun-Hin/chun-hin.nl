@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 0%;
+    padding: 0%;
+    background-color: #161617;
+}
+
+#overlay{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+#cDialog{
+    transition: top 1s;
+    top: 40%;
+    position: absolute;
+    top: -300px;
+    width: 500px;
+    background-color: black;
+    z-index: 2;
+    color: white;
+    margin-left: 480px;
+}
+#diaHead{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #161617;
+    color: #FF9900;
+    font-size: 30px;
+}
+.fa-close:hover{
+    color: #1E5977;
+    cursor: pointer;
+}
+#diaCont{
+    flex-direction: column;
+    font-size: 20px;
+    justify-content: center;
+    padding: 60px;
+    background-color:#161617 ;
+    color: #FF9900;
+}
+#diaFooter{
+    padding: 10px;
+    background-color: #161617;
+}
+
+.topnav{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.nav{
+    color: #1E5977;
+}
+
+.nav a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.butn{
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.butn:hover{
+    color: #FF9900;
+    text-decoration: underline;
+}
+
+.content{
+    display: flex;
+    width: 100%;
+    height: 700px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-image {
+    width: 100%;
+    height: 75%;
+    margin-left: 150px;
+    margin-top: 150px;
+}
+
+#image img {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 320px;
+}
+
+.text {
+    color: #FEFAF8;
+    margin-right: 150px;
+}
+
+#ikben{
+    color: #FF9900;
+}
+
+.cvBtn{
+    cursor: pointer;
+}
+
+button, button::after {
+    width: 150px;
+    height: 30px;
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(40deg, transparent 5%, #1E5977 5%);
+    border: 0;
+    color: white;
+    letter-spacing: 3px;
+    line-height: 10px;
+    box-shadow: 6px 0px 0px white;
+    outline: transparent;
+    position: relative;
+}
+
+button::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: 'Resume';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, white 3%, white 5%, #FF9900 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px white;
+    clip-path: var(--slice-0);
+}
+
+button:hover::after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: var(--slice-1);
+        transform: translate(-20px, -10px);
+    }
+    10% {
+        clip-path: var(--slice-3);
+        transform: translate(10px, 10px);
+    }
+    20% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 10px);
+    }
+    30% {
+        clip-path: var(--slice-3);
+        transform: translate(0px, 5px);
+    }
+    40% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 0px);
+    }
+    50% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 0px);
+    }
+    60% {
+        clip-path: var(--slice-4);
+        transform: translate(5px, 10px);
+    }
+    70% {
+        clip-path: var(--slice-2);
+        transform: translate(-10px, 10px);
+    }
+    80% {
+        clip-path: var(--slice-5);
+        transform: translate(20px, -10px);
+    }
+    90% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 0px);
+    }
+    100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    vertical-align: 1000px;
+}

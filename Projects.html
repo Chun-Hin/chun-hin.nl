@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/Projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+        function contact() {
+            console.log("open contact")
+            document.getElementById("overlay").style.display = "block"
+            document.getElementById("cDialog").style.top = "280px"
+        }
+
+        function closecontact() {
+            console.log("Close Login");
+            document.getElementById("cDialog").style.top= "-400px ";
+            document.getElementById("overlay").style.display = "none  ";
+        }
+    </script>
+
+</head>
+<body>
+
+    <div id="overlay"></div>
+
+    <div id="cDialog">
+        <div id="diaHead"><p style="margin-left: 180px">Contact</p><i onclick="closecontact()" class="fa fa-close"></i></div>
+        <div id="diaCont"><p style="text-align: center">chunhin.ip05@gmail.com</p><br><p style="text-align: center">+31628269761</p></div>
+        <div id="diaFooter"></div>
+    </div>
+
+    <div class="topnav">
+        <nav class="nav">
+            <a class="butn" href="index.html">Home</a>
+            <a class="butn" href="about.html">About Me</a>
+            <a class="butn" href="skills.html">Skills</a>
+            <a class="butn" style="color: #FF9900">Projects</a>
+            <a class="butn" onclick="contact()">Contact</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div>
+            <p class="header">Projects</p>
+            <br>
+            <p class="headerInfo">Here are some projects i made with all kinds of programming languages.</p>
+        </div>
+        <br>
+        <div class="UX">
+            <a class="headerUx"> User Experience</a>
+            <br>
+            <div class="contentUx">
+                <a>With this assignment I had to retrieve data from a topic, give a conclusion and visualize it in a single page website. When visualizing I used whitespace, iconography, typography etc.</a>
+            </div>
+            <br>
+            <button class="btnUX" onclick="window.location.href='UX.html'">UX assignment</button>
+        </div>
+        <br>
+        <div class="CSP1">
+            <a class="headerCSP"> CSP1</a>
+            <br>
+            <div class="contentCSP">
+                <a>Here I have created a form and a valid input is checked. For example: is there a valid first/last name. If it is valid the field would turn green, otherwise red with a warning that the field entered is not valid. I made this using JavaScript and HTML.</a>
+            </div>
+            <br>
+            <button class="btnCSP" onclick="window.location.href=''">Soon!!</button>
+        </div>
+    </div>
+
+</body>
+</html>
