@@ -1,133 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        body{
-            font-family: Verdana;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/CSP.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+    </script>
 
     <script>
-        function vCheck(elm) {
-            elm.style.color = 'green'
-            if (elm.value.length > 2) {
-                elm.style.color = 'green'
+        var url = "https://15euros.nl/api/bier_basic.php";
+        $.getJSON(url, function (data, status) {
+            //  console.log("Data:", data);
+            // console.log("Status:", status);
+            getList(data);
+        });
 
+        function getList(beers) {
+            console.log(beers);
+            let html = "<table border='1'>"
+            for (let i = 0; i < beers.length; i++)
+            {
+                html += "<tr>";
+                html += "<td>" + beers[i].naam + "</td>"
+                html += "<td>" + beers[i].brouwer + "</td>";
+                html += "</tr>";
             }
-            else {
-                elm.style.color = 'red'
-            }
-
-            // if (elm.classList.contains('email'))
-
+            html += "</table>";
+            document.getElementById("divBeer").innerHTML = html;
         }
     </script>
 </head>
 <body>
 
-<h2>Formulier</h2>
-<form>
-    <table>
-        <tr>
-            <td>
-                <label>Naam:</label>
-            </td>
-            <td><input type="text"
-                       name="vName"
-                       placeholder="Voornaam"
-                       onblur="vCheck(this)">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Tussenvoegsel:</label>
-            </td>
-            <td><input type="text"
-                       name="tv"
-                       placeholder="Tussenvoegsel"
-                       onblur="vCheck(this)">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Achternaam:</label>
-            </td>
-            <td><input type="text"
-                       name="aName"
-                       placeholder="Achetrnaam"
-                       onblur="vCheck(this)">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Adres:</label>
-            </td>
-            <td><input type="text"
-                       name="Adres"
-                       placeholder="Adres"
-                       onblur="vCheck(this)">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Postcode:</label>
-            </td>
-            <td><input type="text"
-                       name="pc"
-                       placeholder="Postcode"
-                       onblur="vCheck(this)">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Woonplaats:</label>
-            </td>
-            <td><input type="text"
-                       name="wp"
-                       placeholder="Woonplaats"
-                       onblur="vCheck(this)">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Telefoonnummer:</label>
-            </td>
-            <td><input type="number"
-                       name="tn"
-                       placeholder="Telefoonnummer"
-                       onblur="vCheck(this)">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>E-mail</label>
-            </td>
-            <td><input type="email"
-                       name="vName"
-                       placeholder="Voornaam"
-                       onblur="vCheck(this)">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Geboortedatum:</label>
-            </td>
-            <td><input type="date"
-                       name="gb"
-                       placeholder="Geboortedatum"
-                       onblur="vCheck(this)">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" >
-            </td>
-        </tr>
-    </table>
-</form>
+    <div class="topnav">
+        <nav class="nav">
+            <a class="butn" href="index.html">Home</a>
+            <a class="butn" href="projects.html">Projects</a>
+            <a class="butn" href="" style="color: #FF9900">A,B</a>
+            <a class="butn" href="C.html">C</a>
+            <a class="butn" href="D.html">D</a>
+        </nav>
+    </div>
+
+    <div class="content">
+            <p class="header">Opdracht B</p>
+            <p class="headerText">Ik heb hier een list gekregen met biertjes en de brouwers daarvan, mijn taak was om dit in een tabel te zetten.</p>
+        <div class="table">
+            <h1>Bieren</h1>
+            <div id="divBeer"></div>
+        </div>
+    </div>
+
+
+
 </body>
 </html>
-<!--// function vCheck(inp){-->
-<!--//     let elm = document.getElementById();-->
-<!--//    console.log("de waarde van " + inp.placeholder + " is " + inp.value);-->
-<!--// }-->
