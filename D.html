@@ -13,25 +13,27 @@
 
         function getTable(data) {
 
-            let html = "<table border='1' class='landtabel'>"
+            let html = "<table border='1'>"
             html += "<th>land</th><th>vlag</th><th>buur-landen</th>"
             for (let i = 0; i < data.length; i++){
                 console.log(data[i].name)
                 let border = data[i].borders
                 if (border == null) {
                     html += "<tr>";
-                    html += "<td>" + data[i].name + "</td>";
+                    html += "<td class='landtabel'>" + data[i].name + "</td>";
                     html += "<td>" + "<img src=" + data[i].flags.png + ">" + "</td>";
                     html += "<td>" + "" + "</td>";
                     html += "</tr>";
                 }
                 else{
                     let text = border.toString();
-                    let place = text.replaceAll(",", " + ")
+                    let place = text.replaceAll(",", " <li> ")
                     html += "<tr>";
-                    html += "<td>" + data[i].name + "</td>";
+                    html += "<td class='landtabel'>" + data[i].name + "</td>";
                     html += "<td>" + "<img src=" + data[i].flags.png + ">" + "</td>";
-                    html += "<td>" + place + "</td>";
+                    html += "<td>";
+                    html += "<li>" + place + "</li>"
+                    html+= "</td>";
                     html += "</tr>";
                 }
             }
@@ -46,14 +48,14 @@
         <nav class="nav">
             <a class="butn" href="index.html">Home</a>
             <a class="butn" href="projects.html">Projects</a>
-            <a class="butn" href="CSP.html">B</a>
-            <a class="butn" href="C.html">C</a>
-            <a class="butn" style="color: #FF9900">D</a>
+            <a class="butn" href="CSP.html">12B</a>
+            <a class="butn" href="C.html">12C</a>
+            <a class="butn" style="color: #FF9900">12D</a>
         </nav>
     </div>
 
     <div class="content">
-        <p class="header">Opdracht D</p>
+        <p class="header">Opdracht 12D</p>
         <p class="headerText">Ik moest hier een landen API ophalen en de landen die daar in stonden in de console laten zien. Hierna moest ik een tabel maken met jQuery en hierin de landen, vlaggen en buur-landen zetten.</p>
         <div id="divLand"></div>
     </div>
