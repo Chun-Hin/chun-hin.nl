@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+  <link rel="stylesheet" href="styles/op11.css">
+  <script
+          src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+  </script>
+
+  <script>
+
+    $(document).ready(function () {
+      $("#myButton").click(function () {
+        $("div").css("font-family", "Verdana")
+      })
+    })
+
+
+    function wijzigMetJS() {
+      console.log("in wijzigMetJS()");
+      var aDivs = document.getElementsByClassName("Divie");
+
+      for (var i = 0; i < aDivs.length; i++) {
+        aDivs[i].style.backgroundColor = "red";
+        aDivs[i].style.margin = "10px";
+        aDivs[i].style.border = "7px solid green";
+      }
+
+    }
+
+    function wijzigMetJQuery() {
+      console.log("in wijzigMetJQuery()");
+      $(".Divie")
+              .css("background-color", "blue")
+              .css("margin", "5px")
+              .css("border", "3px dashed purple");
+    }
+
+    $(document).ready(function () {
+      $("#button1").click(function () {
+        $("p").hide();
+      });
+    });
+
+    $(document).ready(function () {
+      $("#button2").click(function () {
+        $("p").show();
+      });
+    });
+  </script>
+
+
+</head>
+<body>
+
+<div class="topnav">
+  <nav class="nav">
+    <a class="butn" href="index.html">Home</a>
+    <a class="butn" href="projects.html">Projects</a>
+    <a class="butn" style="color: #FF9900">11</a>
+    <a class="butn" href="CSP.html">12B</a>
+    <a class="butn" href="C.html">12C</a>
+    <a class="butn" href="D.html">12D</a>
+  </nav>
+</div>
+
+<div class="content">
+  <p class="header">Opdracht 11</p>
+  <p class="headerText">Ik heb hier jQuery gekoppeld met een CDN en een voorbeeld van w3schools aangpast door een "show" button toe te voegen. Ook heb ik een voorbeeld van jsFiddle gebruikt en 3 divjes laten wijzigen met js en jQuery.</p>
+
+  <h2>This is a heading</h2>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+
+  <div>
+    <button id="button1" style="color: black; background-color: white">hide</button>
+    <button id="button2" style="color: black; background-color: white">show</button>
+
+  </div>
+
+  <h2>Voorbeeld gebruik van: plain Javascript &lt;=&gt; jQuery</h2>
+  <div class="Divie">
+    Hallo wereld
+  </div>
+
+  <div class="Divie" id="divNr2">
+    Wat een prachtige div
+  </div>
+
+  <div class="Divie">
+    Hier zelfs nog een!
+  </div>
+
+  <div>
+    <button onclick="wijzigMetJS()" style="color: black; background-color: white">met JS al dezelfde classes wijzigen</button>
+    <button onclick="wijzigMetJQuery()" style="color: black; background-color: white">met jQuery  al dezelfde classes wijzigen</button>
+    <button id="myButton" style="color: black; background-color: white">wijzig lettertype alle divs</button>
+  </div>
+</div>
+
+
+
+</body>
+</html>
