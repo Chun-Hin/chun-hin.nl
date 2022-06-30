@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="images/IMG_0874%202.jpg">
+  <link rel="stylesheet" href="styles/14.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <script>
+    $.getJSON("https://restcountries.com/v2/all", function (data) {
+      data.forEach(function (land) {
+        let lengthborders = 0;
+        let borderselect = "";
+        if (land.borders){
+          lengthborders = land.borders.length
+          borderselect = "<select id='select' onchange='selectchange(this)'>";
+          land.borders.forEach(function (border) {
+            borderselect += "<option id=>" + border + "</option>";
+          });
+          borderselect+= "</select>";
+        }
+
+
+        $('#myTable').append(
+                "<tr>" +
+                "<td>" + land.name + "</td>" +
+                "<td>" + land.region + "</td>" +
+                "<td>" + lengthborders + "</td>" +
+                "<td>" + borderselect + "</td>" +
+                "</tr>");
+      })
+    })
+
+    function selectchange(selectBox) {
+      let selectland = selectBox.value;
+      $.getJSON("https://restcountries.com/v3.1/alpha/" + selectland, function (data) {
+        data.forEach(function (land) {
+          console.log(data)
+          $('#div2').html(
+                  "<div>" +
+                  "<a>" + "Common Naam: " + land.name.common + "</a><br>" +
+                  "<a>" + "Regio : " + land.region + "</a><br>" +
+                  "<a>" + "Aantal inwoners: " + land.population + "</a><br>" +
+                  "<img src=" + land.flags.png + ">" +
+                  "</div>");
+        })
+      })
+    }
+
+  </script>
+</head>
+<body>
+
+<div class="topnav">
+  <nav class="nav">
+    <a class="butn" href="index.html">Home</a>
+    <a class="butn" href="projects.html">Projects</a>
+    <a class="butn" href="op11.html">11</a>
+    <a class="butn" href="CSP.html">12B</a>
+    <a class="butn" href="C.html">12C</a>
+    <a class="butn" href="D.html">12D</a>
+    <a class="butn" style="color: #FF9900">14</a>
+  </nav>
+</div>
+
+<div class="content">
+  <p class="header">Opdracht 14</p>
+  <p class="headerText">Hier heb ik met select-boxes gewerkt en met onchange functies gewerkt. Ik heb de API opgehaald met JSON en een bepaald aantal data in een Jquery tabel met ".append" gezet doormiddel van het loopen van de data met "ForEach". De bedoeling is dat de data word geloopt en als er een keuze uit de selectbox gemaakt word en dat overeenkomt met de data uit de api dat het allemaal eigenschappen van de data "uitspuugt"</p>
+</div>
+
+  <div id="container">
+    <div id="div1">
+      <table id="myTable" border="1"></table>
+    </div>
+    <div id="div2"></div>
+  </div>
+</div>
+
+</body>
+</html>
