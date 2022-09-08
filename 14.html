@@ -12,7 +12,7 @@
         let borderselect = "";
         if (land.borders){
           lengthborders = land.borders.length
-          borderselect = "<select id='select' onchange='selectchange(this)'>";
+          borderselect = "<select onchange='selectchange(this)'>";
           land.borders.forEach(function (border) {
             borderselect += "<option id=>" + border + "</option>";
           });
@@ -45,6 +45,9 @@
         })
       })
     }
+
+  </script>
+
 
   </script>
 </head>
